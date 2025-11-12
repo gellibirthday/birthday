@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Gelli!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Refresh Button -->
+    <button class="refresh-button" id="refreshButton">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+        </svg>
+    </button>
+
+    <!-- Animated Background Elements -->
+    <div id="background-animation"></div>
+
+    <!-- Phase 1: Gift Box -->
+    <div id="phase1" class="phase active">
+        <div class="floating-elements-phase1" id="floatingElementsPhase1"></div>
+        <div class="gift-box" id="giftBox">
+            <div class="box-label">To Gelli, With Love.</div>
+            <div class="box-body">
+                <div class="box-ribbon-vertical"></div>
+                <div class="box-ribbon-horizontal"></div>
+            </div>
+            <div class="box-lid" id="boxLid">
+                <div class="bow">
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+                    <div class="bow-center"></div>
+                </div>
+                <button class="open-button" id="openButton">Open It</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phase 2: Cake & Wish -->
+    <div id="phase2" class="phase">
+        <div class="cake-background-container">
+            <div class="side-fill left-fill"></div>
+            <div class="cake-image-wrapper">
+                <img src="cake-lit.jpg" alt="Birthday Cake" id="cakeImage" class="cake-bg-image">
+            </div>
+            <div class="side-fill right-fill"></div>
+        </div>
+        <button class="wish-button" id="wishButton">
+            <svg class="mic-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="23"></line>
+                <line x1="8" y1="23" x2="16" y2="23"></line>
+            </svg>Make a Wish!
+        </button>
+    </div>
+
+    <!-- Phase 3: Celebration -->
+    <div id="phase3" class="phase">
+        <div class="cake-background-container">
+            <div class="side-fill left-fill"></div>
+            <div class="cake-image-wrapper">
+                <img src="cake-blown.jpg" alt="Birthday Cake" id="cakeImageBlown" class="cake-bg-image">
+            </div>
+            <div class="side-fill right-fill"></div>
+        </div>
+        
+        <h1 class="birthday-title" id="birthdayTitle">HAPPY BIRTHDAY GELLI!</h1>
+        
+        <div class="floating-elements" id="floatingElements"></div>
+        
+        <div class="scroll-container">
+            <div class="scroll-card" id="scrollCard">
+                <div class="scroll-edge left-edge"></div>
+                <div class="scroll-edge right-edge"></div>
+                <div class="gold-strip left-strip"></div>
+                <div class="gold-strip right-strip"></div>
+                
+                <div class="ribbon-wrap" id="ribbonWrap">
+                    <div class="ribbon"></div>
+                    <button class="scroll-action-button" id="scrollActionButton">Open It</button>
+                </div>
+                
+                <div class="scroll-paper" id="scrollPaper">
+                    <div class="scroll-content">
+                        <p class="message">
+                            My dearest Gelli,<br>
+                            I hope you are having amazing birthday today. This little website is just a tiny fraction of the joy you bring into my life. 
+                            No matter how far you are from me, you will always be in my heart. You are the best person I ever met in my life and my favorite person too :). 
+                            All I want is you to be happy even though you ghosted me a lot hahaha. Not a single day goes by when I don't think about you. I will always cherish the happy memories with you.<br>
+                            Thank you for being you and a great companion. I love you more than words can say.<br>
+                            Your cyber friend,<br>
+                            Gaurav
+                        </p>
+                        <button class="close-scroll-button" id="closeScrollButton">Close It</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
