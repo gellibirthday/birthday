@@ -471,7 +471,7 @@ body {
 .scroll-container {
     position: fixed;
     top: 100px;
-    left: 38%;
+    left: 35%;
     z-index: 10;
     animation: bounceIn 1s ease-out;
     /* margin-top: 100px; */
@@ -718,4 +718,5 @@ body {
     .message {
         font-size: 16px;
     }
+
 }
