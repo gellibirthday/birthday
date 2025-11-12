@@ -3,7 +3,28 @@ let currentPhase = 1;
 let scrollOpen = false;
 
 // Initialize on page load
-document.addEventListener('DOMContentLoaded', function() {
+// document.addEventListener('DOMContentLoaded', function() {
+//     initializeBackgroundAnimation();
+//     setupPhase1();
+//     setupPhase2();
+//     setupPhase3();
+//     setupRefreshButton();
+// });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const romanticMusic = document.getElementById('romanticMusic'); // Get the romantic music audio element
+
+    // Attempt to play the music
+    const playMusic = () => {
+        romanticMusic.play().catch((error) => {
+            console.warn('Autoplay was blocked. Music will play after user interaction.');
+        });
+    };
+
+    // Try playing the music on page load
+    playMusic();
+
+    // Initialize the website
     initializeBackgroundAnimation();
     setupPhase1();
     setupPhase2();
@@ -17,7 +38,47 @@ function setupRefreshButton() {
     refreshButton.addEventListener('click', resetToGiftBox);
 }
 
+// function resetToGiftBox() {
+//     // Reset all phases
+//     document.getElementById('phase1').classList.remove('zooming');
+//     document.getElementById('phase2').classList.remove('active');
+//     document.getElementById('phase3').classList.remove('active');
+//     document.getElementById('phase1').classList.add('active');
+    
+//     // Reset birthday title
+//     document.getElementById('birthdayTitle').classList.remove('fly-up');
+    
+//     // Reset scroll
+//     const scrollPaper = document.getElementById('scrollPaper');
+//     const ribbonWrap = document.getElementById('ribbonWrap');
+//     const scrollActionButton = document.getElementById('scrollActionButton');
+    
+//     scrollPaper.classList.remove('unfurled');
+//     ribbonWrap.classList.remove('untied');
+//     ribbonWrap.style.display = 'flex';
+//     scrollActionButton.textContent = 'Open It';
+//     scrollOpen = false;
+    
+//     // Clear floating elements
+//     document.getElementById('floatingElements').innerHTML = '';
+    
+//     // Restart phase 1 floating elements
+//     startPhase1FloatingElements();
+    
+//     currentPhase = 1;
+// }
+
 function resetToGiftBox() {
+    const romanticMusic = document.getElementById('romanticMusic'); // Get the romantic music audio element
+    const backgroundMusic = document.getElementById('backgroundMusic'); // Get the birthday music audio element
+
+    // Stop the birthday music
+    backgroundMusic.pause();
+    backgroundMusic.currentTime = 0; // Reset playback position
+
+    // Play romantic music
+    romanticMusic.play();
+
     // Reset all phases
     document.getElementById('phase1').classList.remove('zooming');
     document.getElementById('phase2').classList.remove('active');
@@ -147,13 +208,32 @@ function createPhase1FloatingElement(container) {
     }, duration * 1000);
 }
 
+// function openGiftBox() {
+//     const phase1 = document.getElementById('phase1');
+//     const phase2 = document.getElementById('phase2');
+    
+//     // Zoom into gift box
+//     phase1.classList.add('zooming');
+    
+//     // After zoom animation, show phase 2
+//     setTimeout(() => {
+//         phase1.classList.remove('active');
+//         phase2.classList.add('active');
+//         currentPhase = 2;
+//     }, 1500);
+// }
+
 function openGiftBox() {
     const phase1 = document.getElementById('phase1');
     const phase2 = document.getElementById('phase2');
-    
+    const romanticMusic = document.getElementById('romanticMusic'); // Get the romantic music audio element
+
+    // Play romantic music
+    romanticMusic.play();
+
     // Zoom into gift box
     phase1.classList.add('zooming');
-    
+
     // After zoom animation, show phase 2
     setTimeout(() => {
         phase1.classList.remove('active');
@@ -168,30 +248,62 @@ function setupPhase2() {
     wishButton.addEventListener('click', makeWish);
 }
 
+// function makeWish() {
+//     const phase2 = document.getElementById('phase2');
+//     const phase3 = document.getElementById('phase3');
+//     const birthdayTitle = document.getElementById('birthdayTitle');
+    
+//     // Brief pause before transitions
+//     setTimeout(() => {
+//         // Transition to Phase 3
+//         phase2.classList.remove('active');
+//         phase3.classList.add('active');
+//         currentPhase = 3;
+        
+//         // Show and fly up the birthday title
+//         setTimeout(() => {
+//             birthdayTitle.classList.add('fly-up');
+//         }, 100);
+        
+//         // Start celebration effects
+//         setTimeout(() => {
+//             startCelebration();
+//         }, 800);
+//     }, 800);
+// }
+
 function makeWish() {
     const phase2 = document.getElementById('phase2');
     const phase3 = document.getElementById('phase3');
     const birthdayTitle = document.getElementById('birthdayTitle');
+    const backgroundMusic = document.getElementById('backgroundMusic'); // Get the audio element
+    const romanticMusic = document.getElementById('romanticMusic'); // Get the romantic music audio element
     
+    // Stop the birthday music
+    romanticMusic.pause();
+    romanticMusic.currentTime = 0; // Reset playback position
+
+    // Play background music
+    backgroundMusic.play();
+
     // Brief pause before transitions
     setTimeout(() => {
         // Transition to Phase 3
         phase2.classList.remove('active');
         phase3.classList.add('active');
         currentPhase = 3;
-        
+
         // Show and fly up the birthday title
         setTimeout(() => {
             birthdayTitle.classList.add('fly-up');
         }, 100);
-        
+
         // Start celebration effects
         setTimeout(() => {
             startCelebration();
         }, 800);
     }, 800);
 }
-
 
 // Phase 3: Celebration Setup
 function setupPhase3() {

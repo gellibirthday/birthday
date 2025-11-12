@@ -475,7 +475,7 @@ body {
     z-index: 10;
     animation: bounceIn 1s ease-out;
     /* margin-top: 100px; */
-}
+} 
 
 .scroll-card {
     position: fixed;
@@ -488,6 +488,7 @@ body {
     padding: 30px 20px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.3);
 }
+
 
 .scroll-edge {
     position: absolute;
@@ -538,6 +539,7 @@ body {
     transition: all 0.8s ease;
     z-index: 10;
 }
+
 
 .ribbon-wrap.untied {
     opacity: 0;
@@ -621,6 +623,7 @@ body {
     transition: max-height 1.5s ease-out;
 }
 
+
 .scroll-paper.unfurled {
     max-height: 1000px;
 }
@@ -629,6 +632,10 @@ body {
     max-height: 0;
 }
 
+
+.scroll-content {
+    text-align: center;
+}
 .scroll-content {
     padding: 20px 10px;
 }
@@ -640,6 +647,21 @@ body {
     color: #5a3e36;
     text-align: center;
 }
+
+/* @media (max-width: 768px) {
+    .scroll-card {
+        max-width: 90%;
+    }
+    .message {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .message {
+        font-size: 14px;
+    }
+} */
 
 /* Responsive Design */
 @media (max-width: 768px) {
