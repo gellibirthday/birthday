@@ -210,8 +210,8 @@ body {
     top: 55px;
     left: 50%;
     transform: translateX(-50%);
-    width: 320px;
-    height: 75px;
+    width: 105%;
+    height: 22%;
     background: linear-gradient(135deg, #ff9ec6 0%, #ff7eb3 100%);
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.3);
@@ -731,4 +731,5 @@ body {
     .message {
         font-size: 16px;
     }
+
 }
