@@ -471,15 +471,15 @@ body {
 .scroll-container {
     position: fixed;
     top: 100px;
-    left: 35%;
+    /* left: 35%; */
     z-index: 10;
-    animation: bounceIn 1s ease-out;
+    
     /* margin-top: 100px; */
 } 
 
 .scroll-card {
-    position: fixed;
-    left: 35%;
+    /* position: fixed; */
+    /* left: 35%; */
     width: 500px;
     max-width: 90vw;
     min-height: 150px;
@@ -487,8 +487,20 @@ body {
     border-radius: 8px;
     padding: 30px 20px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    /* transition: all 10s ease; */
+    animation: scrollBounceIn 1s ease-out;
 }
-
+@keyframes scrollBounceIn {
+    0% {
+        transform: translate(0%, 0%) scale(0);
+    }
+    50% {
+        transform: translate(0%, 0%) scale(1.1);
+    }
+    100% {
+        transform: translate(0%, 0%) scale(1);
+    }
+}
 
 .scroll-edge {
     position: absolute;
@@ -589,8 +601,9 @@ body {
 
 .close-scroll-button {
     display: none; /* Initially hidden */
-    position: absolute;
-    left: 39%;
+    /* position: absolute;
+    left: 39%; */
+    margin: auto;
     padding: 10px 30px;
     background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
     border: none;
@@ -718,5 +731,4 @@ body {
     .message {
         font-size: 16px;
     }
-
 }
